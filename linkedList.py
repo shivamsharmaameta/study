@@ -119,9 +119,9 @@ def detectLoop(l):
     
     # Floyd's Cycle-Finding Algorithm.    
     slow = fast = cur
-    while(cur):
-        slow = cur.next
-        fast = cur.next.next
+    while(slow and fast and fast.next):
+        slow = slow.next
+        fast = fast.next.next
         if slow == fast:
             print("Loop Detected! using Floyd's Cycle-Finding Algorithm.")
             return
@@ -132,4 +132,3 @@ l1 = LL("A", "B", "C", "D")
 l1.head.next.next.next = l1.head.next
 
 detectLoop(l1)
-# l1.printAll()
