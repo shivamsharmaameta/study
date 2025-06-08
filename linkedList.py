@@ -97,7 +97,18 @@ class LL:
             pos += 1
         print("Not Found!")
 
+def merge(l1, l2):
+    h1 = l1.head
+    h2 = l2.head
+    
+    while(h1.next):
+        h1 = h1.next
+    h1.next = h2
+    
+l1 = LL("A", "B", "C", "D")
+l2 = LL(1,2,3,4)
 
-l = LL("A", "B", "C", "D")
+l1.printAll()
+l2.printAll()
 
-l.printAll()
+
