@@ -85,6 +85,17 @@ class LL:
             print("->".join(ele))
         else:
             print("Empty List")
+            
+    def search(self, val):
+        cur = self.head
+        pos = 1
+        while(cur):
+            if cur.val == val:
+                print(f"Found at {pos}")
+                return
+            cur = cur.next
+            pos += 1
+        print("Not Found!")
 
 
 l = LL("A", "B", "C", "D")
