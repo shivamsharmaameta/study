@@ -104,11 +104,32 @@ def merge(l1, l2):
     while(h1.next):
         h1 = h1.next
     h1.next = h2
+
+def detectLoop(l):
+    cur = l.head
+    #Hashset
     
+    # s = set()
+    # while(cur):
+    #     if cur in s:
+    #         print("Loop Detected! using Hashset.")
+    #         return
+    #     s.add(cur)
+    #     cur = cur.next
+    
+    # Floyd's Cycle-Finding Algorithm.    
+    slow = fast = cur
+    while(cur):
+        slow = cur.next
+        fast = cur.next.next
+        if slow == fast:
+            print("Loop Detected! using Floyd's Cycle-Finding Algorithm.")
+            return
+        cur = cur.next
+        
 l1 = LL("A", "B", "C", "D")
-l2 = LL(1,2,3,4)
 
-l1.printAll()
-l2.printAll()
+l1.head.next.next.next = l1.head.next
 
-
+detectLoop(l1)
+# l1.printAll()
