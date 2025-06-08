@@ -106,7 +106,7 @@ def merge(l1, l2):
     h1.next = h2
 
 def detectLoop(l):
-    # First create a loop using following line of code in main and remove printAll() method.
+    # First create a loop using following line of code in main and don't call printAll() method.
     # l1.head.next.next.next = l1.head.next
 
     cur = l.head
